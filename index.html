@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | Your Name</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <h1>Your Name</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="resume.html">Resume</a>
-      <a href="contact.html">Contact</a>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="projects.html" class="nav-item">Projects</a>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="resume.html" class="nav-item">Resume</a>
+      <a href="contact.html" class="nav-item">Contact</a>
     </nav>
+    <div class="hero">
+      <h1>Your Name</h1>
+      <p class="subtitle">Mechanical Engineer | Robotics | Hardware & Software Integration</p>
+    </div>
   </header>
 
-  <main class="section">
-    <h2>Welcome</h2>
-    <p>Hi, I’m Your Name. This is my personal portfolio website where you can learn about me, explore my projects, and see my resume.</p>
+  <main class="featured-projects">
+    <section class="project-preview">
+      <img src="img/project-slug1.jpg" alt="Project 1 image">
+      <div class="project-info">
+        <h2>Project 1 Title</h2>
+        <p>Short tagline or summary of project 1. What it is & what you did.</p>
+        <a href="project-slug1.html" class="discover">Discover More →</a>
+      </div>
+    </section>
+
+    <section class="project-preview">
+      <img src="img/project-slug2.jpg" alt="Project 2 image">
+      <div class="project-info">
+        <h2>Project 2 Title</h2>
+        <p>Short tagline or summary of project 2. What it is & what you did.</p>
+        <a href="project-slug2.html" class="discover">Discover More →</a>
+      </div>
+    </section>
+
+    <!-- Add more featured projects similarly -->
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 Your Name</p>
+  <footer class="site-footer">
+    <p>Email: you@example.com</p>
   </footer>
+
 </body>
 </html>
