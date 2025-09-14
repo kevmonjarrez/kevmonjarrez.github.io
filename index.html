@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header>
+  <!-- Header -->
+  <header class="header">
     <h1>Your Name</h1>
     <p>Mechanical Engineer | Robotics | Maker</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Short bio here. Highlight your background, skills, and interests.</p>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      I’m a mechanical engineer with a passion for robotics, design, and innovation.
+      Skilled in Python, C++, and mechanical systems design.
+    </p>
+  </section>
 
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><a href="https://github.com/username/project1">Project 1</a> – description.</li>
-        <li><a href="https://github.com/username/project2">Project 2</a> – description.</li>
-      </ul>
-    </section>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Short description of what you built and learned.</p>
+        <a href="https://github.com/username/project1" target="_blank">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Another cool project with a few details.</p>
+        <a href="https://github.com/username/project2" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: you@example.com</p>
-      <p><a href="https://linkedin.com/in/username">LinkedIn</a></p>
-    </section>
-  </main>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <p><a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a></p>
+    <p><a href="https://github.com/username" target="_blank">GitHub</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Your Name</p>
+  </footer>
 </body>
 </html>
