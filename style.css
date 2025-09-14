@@ -1,130 +1,38 @@
-/* base reset and typography */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #222;
-  background: #fff;
-  line-height: 1.5;
-}
-
-a {
-  color: #0077cc;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Header & Nav */
-.site-header {
-  padding: 2rem 1rem;
+/* Hero Project */
+.hero-project {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
   text-align: center;
 }
 
-.nav {
-  margin-bottom: 2rem;
-}
-
-.nav-item {
-  margin: 0 1rem;
-  font-size: 1rem;
-  color: #222;
-}
-
-.nav-item:hover {
-  color: #0077cc;
-}
-
-/* Hero / Home */
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  color: #555;
-}
-
-/* Featured Projects / Previews */
-.featured-projects, .all-projects {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.project-preview, .project-card {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1.5rem;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.project-preview img, .project-card img {
+.hero-project img {
   width: 100%;
-  height: auto;
+  max-height: 450px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.project-info, .card-info {
-  display: flex;
-  flex-direction: column;
+.hero-project-info {
+  max-width: 700px;
+  margin: auto;
 }
 
-.discover {
-  margin-top: 1rem;
+.hero-project h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-project p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.hero-project .discover {
   font-weight: bold;
+  font-size: 1rem;
   color: #0077cc;
-}
-
-/* Project Detail */
-.project-detail {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.project-detail img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 1rem 0;
-}
-
-.project-dates {
-  font-style: italic;
-  color: #555;
-}
-
-/* About, Resume, Contact Pages */
-.about-page, .resume-page, .contact-page {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.resume-page section {
-  margin-bottom: 2rem;
-}
-
-.resume-page h2 {
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-/* Footer */
-.site-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #555;
-  margin: 4rem 0 2rem;
 }
