@@ -1,61 +1,789 @@
-<!DOCTYPE html>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Thermal Management System</h3>
+                        <p>Designed an innovative cooling system for high-performance electronics, achieving 30% better heat dissipation through advanced fin geometries and airflow optimization.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SolidWorks</span>
+                            <span class="tech-tag">CFD            .hero-project-content {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .hero-project-text {
+                padding: 2rem;
+            }
+
+            .hero-project-text h3 {
+                font-size: 2rem;
+            }
+
+            .hero-project-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #4a5568;
+            background: #f7fafc;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(247, 250, 252, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #2d3748;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #4a5568;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #edf2f7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(74, 85, 104, 0.03) 50%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            animation: slideUp 1s ease-out 0.6s both;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #4a5568;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: slideUp 1s ease-out 0.9s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background: #2d3748;
+            box-shadow: 0 10px 30px rgba(74, 85, 104, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #2d3748;
+            margin-bottom: 3rem;
+        }
+
+        /* About Section */
+        .about {
+            background: #f7fafc;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .about-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill {
+            padding: 8px 16px;
+            background: #e2e8f0;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: #edf2f7;
+        }
+
+        /* Hero Project */
+        .hero-project {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 30px rgba(74, 85, 104, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(74, 85, 104, 0.15);
+        }
+
+        .hero-project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-project-image {
+            height: 400px;
+            background: linear-gradient(135deg, #4a5568, #2d3748);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .hero-project:hover .hero-project-image::after {
+            opacity: 1;
+        }
+
+        .hero-project-text {
+            padding: 3rem;
+        }
+
+        .hero-project-text h3 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-project-text .project-type {
+            color: #4a5568;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-project-text p {
+            color: #4a5568;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-project-tech .tech-tag {
+            padding: 8px 16px;
+            background: #e2e8f0;
+            color: #4a5568;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .hero-project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            padding: 12px 24px;
+            background: #4a5568;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #2d3748;
+            transform: translateY(-2px);
+        }
+
+        .project-link.secondary {
+            background: transparent;
+            color: #4a5568;
+            border: 1px solid #cbd5e0;
+        }
+
+        .project-link.secondary:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(74, 85, 104, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 85, 104, 0.15);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, #4a5568, #2d3748);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::after {
+            opacity: 1;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            padding: 4px 12px;
+            background: #e2e8f0;
+            color: #4a5568;
+            border-radius: 6px;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f7fafc;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact p {
+            color: #4a5568;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 15px 25px;
+            background: #fff;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            color: #4a5568;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #edf2f7;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        footer p {
+            color: #718096;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f7fafc;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2d3748;
+        }
+    </style>
 </head>
 <body>
-
-  <header class="site-header">
-    <nav class="nav">
-      <a href="index.html" class="nav-item">Home</a>
-      <a href="projects.html" class="nav-item">Projects</a>
-      <a href="about.html" class="nav-item">About</a>
-      <a href="resume.html" class="nav-item">Resume</a>
-      <a href="contact.html" class="nav-item">Contact</a>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">[Your Name]</a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <div class="hero">
-      <h1>Your Name</h1>
-      <p class="subtitle">Mechanical Engineer | Robotics | Hardware & Software Integration</p>
-    </div>
-  </header>
 
-  <!-- Featured Hero Project -->
-  <section class="hero-project">
-    <img src="img/together.jpg" alt="Robot Design Studio">
-    <div class="hero-project-info">
-      <h2>Haptic/Robot Telemanipulation System</h2>
-      <p>A showcase project you’re most proud of — explain briefly what it is, why it matters, and your role.</p>
-      <a href="project-hero.html" class="discover">Discover More →</a>
-    </div>
-  </section>
-
-  <!-- Other Featured Projects -->
-  <main class="featured-projects">
-    <section class="project-preview">
-      <img src="img/project-slug2.jpg" alt="Project 2 image">
-      <div class="project-info">
-        <h2>Project 2 Title</h2>
-        <p>Short tagline or summary of project 2.</p>
-        <a href="project-slug2.html" class="discover">Discover More →</a>
-      </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>[Your Name]</h1>
+                <p class="subtitle">Mechanical Engineer & Design Innovator</p>
+                <p class="description">
+                    I design and develop mechanical solutions that bridge engineering excellence with real-world applications. 
+                    Passionate about creating systems that solve complex problems and improve lives.
+                </p>
+                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
+        </div>
     </section>
 
-    <section class="project-preview">
-      <img src="img/project-slug3.jpg" alt="Project 3 image">
-      <div class="project-info">
-        <h2>Project 3 Title</h2>
-        <p>Short tagline or summary of project 3.</p>
-        <a href="project-slug3.html" class="discover">Discover More →</a>
-      </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Profile">
+                </div>
+                <div class="about-text">
+                    <h3>Hi, I'm a passionate mechanical engineer</h3>
+                    <p>
+                        With over 5 years of experience in mechanical design and engineering, I specialize in developing 
+                        innovative solutions for complex mechanical systems. From conceptual design to manufacturing, 
+                        I bring ideas to life through precision engineering and creative problem-solving.
+                    </p>
+                    <p>
+                        When I'm not designing or analyzing systems, you can find me exploring new manufacturing technologies, 
+                        working on personal projects, or staying current with the latest developments in engineering software and methodologies.
+                    </p>
+                    <div class="skills">
+                        <span class="skill">SolidWorks</span>
+                        <span class="skill">AutoCAD</span>
+                        <span class="skill">ANSYS</span>
+                        <span class="skill">MATLAB</span>
+                        <span class="skill">3D Printing</span>
+                        <span class="skill">CNC Machining</span>
+                        <span class="skill">FEA Analysis</span>
+                        <span class="skill">Project Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <p>Email: you@example.com</p>
-  </footer>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <!-- Hero Project -->
+            <div class="hero-project">
+                <div class="hero-project-content">
+                    <div class="hero-project-image"></div>
+                    <div class="hero-project-text">
+                        <p class="project-type">Featured Project</p>
+                        <h3>Automated Manufacturing System</h3>
+                        <p>
+                            Led the design and implementation of a fully automated assembly line system that increased 
+                            production efficiency by 40% while reducing manufacturing defects. The system incorporates 
+                            precision robotics, quality control sensors, and real-time monitoring capabilities.
+                        </p>
+                        <div class="hero-project-tech">
+                            <span class="tech-tag">SolidWorks</span>
+                            <span class="tech-tag">ANSYS</span>
+                            <span class="tech-tag">PLC Programming</span>
+                            <span class="tech-tag">Robotics</span>
+                            <span class="tech-tag">Quality Control</span>
+                        </div>
+                        <div class="hero-project-links">
+                            <a href="#" class="project-link">View Details</a>
+                            <a href="#" class="project-link secondary">Technical Report</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Advanced Materials Testing</h3>
+                        <p>Developed comprehensive testing protocols for composite materials, resulting in 20% improvement in material selection accuracy and reduced product development time.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Material Science</span>
+                            <span class="tech-tag">Testing Protocols</span>
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">Quality Assurance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Precision Fixture Design</h3>
+                        <p>Developed custom manufacturing fixtures that improved part accuracy by 25% and reduced setup time by 50% for a high-volume production line.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AutoCAD</span>
+                            <span class="tech-tag">GD&T</span>
+                            <span class="tech-tag">CNC Machining</span>
+                            <span class="tech-tag">Quality Control</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Vibration Analysis Platform</h3>
+                        <p>Created a comprehensive vibration monitoring system for industrial equipment, enabling predictive maintenance and reducing downtime by 35%.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">Signal Processing</span>
+                            <span class="tech-tag">Data Acquisition</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <div class="contact-content">
+                <p>
+                    I'm always interested in new engineering challenges and innovative projects. 
+                    Whether you have a design problem to solve or want to discuss mechanical engineering solutions, feel free to reach out!
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-link">
+                        📧 Email
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" class="contact-link">
+                        💼 LinkedIn
+                    </a>
+                    <a href="https://github.com/yourusername" class="contact-link">
+                        💻 GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(247, 250, 252, 0.98)';
+            } else {
+                nav.style.background = 'rgba(247, 250, 252, 0.95)';
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(50px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Hero section is always visible
+        document.querySelector('.hero').style.opacity = '1';
+        document.querySelector('.hero').style.transform = 'translateY(0)';
+    </script>
 </body>
 </html>
