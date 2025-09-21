@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haptic/Robotic Telecommunication System</title>
+    <title>Simulated Manipulation of the Kuka youBot</title>
     <style>
         * {
             margin: 0;
@@ -536,30 +536,12 @@
     <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
-            <p class="project-type">Manufacturing Systems Engineering</p>
-            <h1>Jack In Box Physics Simualtion</h1>
+            <p class="project-type">Robotic Motion Planning</p>
+            <h1>Simulated Manipulation of the Kuka youBot</h1>
             <p class="project-summary">
                  a Python-based control pipeline for the KUKA youBot that enables simulated block manipulation 
                  through trajectory planning and feedforward-feedback control in CoppeliaSim. 
             </p>
-            
-            <div class="project-meta">
-                <div class="meta-item">
-                    <div class="meta-label">Duration</div>
-                    <div class="meta-value">15 Weeks</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">Role</div>
-                    <div class="meta-value">Mechanical Design</div>
-                </div>
-            </div>
-
-            <div class="tech-stack">
-                <span class="tech-tag">OnShape</span>
-                <span class="tech-tag">Siemens NX CAM</span>
-                <span class="tech-tag">MatLab</span>
-                <span class="tech-tag">Rapid Prototyping</span>
-            </div>
         </div>
     </section>
 
@@ -583,7 +565,7 @@
                     <h2>Demo Video</h2>
                     <div class="video-container">
                         <iframe 
-                            src="img/Best Trajectory.avi" 
+                            src="img/Best Trajectory.mp4" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -610,21 +592,6 @@
                
 
                 <!-- Mechanical Design -->
-                <div class="section">
-                    <h2>Trajectory Planning </h2>
-                    <p>
-                        A trajectory generator computes end-effector paths between set initial and target cube positions. 
-                        Trajectories are parametrized in SE(3) space and flattened into a CSV format including gripper states (open, closed), facilitating
-                        simulation within Copelia Sim. The flow for the trajectory generator is as follows: 
-                        <ol>
-                            <li>Generate a reference trajectory for the robot end-effector to pick and place an object</li>
-                            <li>Use Feedforward and Feedback control to computer commanded end-effector twists</li>
-                            <li>Converts twists into wheel and arm velocities</li>
-                            <li>Simulates the robots next configuration over time using a supplemental NextState() script</li>
-                            <li>Saved the complete trajectory (robot configuration + gripper state) to a CSV</li>
-                            <li>Plots the end-effector twist error over time to validate the feedback control</li>
-                        </ol>
-                    </p>
                 <div class="section">
                     <h2>Trajectory Planning </h2>
                     <p>

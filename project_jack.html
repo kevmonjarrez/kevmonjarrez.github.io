@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haptic/Robotic Telecommunication System</title>
+    <title>jack In Box Physics Simulation</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+    </script>
     <style>
         * {
             margin: 0;
@@ -435,6 +438,12 @@
         .footer-link:hover {
             background: rgba(255, 255, 255, 0.2);
         }
+        .center {
+             display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -539,27 +548,8 @@
             <p class="project-type">Manufacturing Systems Engineering</p>
             <h1>Jack In Box Physics Simualtion</h1>
             <p class="project-summary">
-                 Haptic-robot telemanipulation system enabling users to control and receive feedback from a Finger and 
-                 Thumb End-effector using a Haptic Finger/Thumb exoskeleton. 
+                 Jack in Box Simulation utilizing sympy symbolic math and Lagrangian mechanics. 
             </p>
-            
-            <div class="project-meta">
-                <div class="meta-item">
-                    <div class="meta-label">Duration</div>
-                    <div class="meta-value">15 Weeks</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">Role</div>
-                    <div class="meta-value">Mechanical Design</div>
-                </div>
-            </div>
-
-            <div class="tech-stack">
-                <span class="tech-tag">OnShape</span>
-                <span class="tech-tag">Siemens NX CAM</span>
-                <span class="tech-tag">MatLab</span>
-                <span class="tech-tag">Rapid Prototyping</span>
-            </div>
         </div>
     </section>
 
@@ -568,8 +558,17 @@
         <div class="container">
             <div class="main-content">
                 <!-- Background -->
+              
                 <div class="section">
-                    <h2>Background</h2>
+                    <h2>Overview</h2>
+                    <div class="video-container">
+                        <iframe 
+                            src="img/jackbox-simv2.mp4" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                     <p>
                         This project simulates a "Jack-In-Box" system using Lagrangian mechanics and symbolic mathematics. 
                         The jack resides inside a box, both influenced by gravity, while the box also experiences sinusoidal external 
@@ -579,182 +578,94 @@
                     </p>
                 </div>
 
-                <!-- System Overview -->
-                <div class="section">
-                    <h2>System Overview</h2>
-                    <p>
-                        The automated manufacturing system integrates four key subsystems: robotic assembly arms, intelligent conveyor 
-                        networks, real-time quality control stations, and a centralized control system. The system processes 150 units 
-                        per hour with 99.2% accuracy, handling complex assembly operations that previously required 12 manual stations.
-                    </p>
-                    <p>
-                        Built on a modular architecture, the system features redundant safety mechanisms, predictive maintenance 
-                        capabilities, and seamless integration with existing ERP systems. The control system utilizes machine learning 
-                        algorithms to optimize production flow and identify potential issues before they impact quality.
-                    </p>
-                </div>
+<div class="section">
+   <h3>Coordinate Transformations</h3>
+    <p>
+        Each jack and the box is represented as a rigid body using homogeneous transformation matrices:
+    </p>
+    <p class="math">
+        $$ g = \begin{bmatrix} R & p \\ 0 & 1 \end{bmatrix} $$
+    </p>
+    <p>
+        where R is the 2D rotation matrix representing orientation, and p is the position vector. 
+        Local frames for each jack and the box are composed to express positions in the world frame, 
+        allowing constraints and interactions to be expressed consistently. 
+    </p>
+    <div class="diagram-placeholder">
+        <img src="img/Jack Box Frames.png" alt="Jack-in-the-Box coordinate frames and transformations" class="center"/>
+        <p style="text-align: center;"><em>Diagram of local frames and world-frame composition of jack and box</em></p>
+    </div>
+</div>
 
-                <!-- Demo Video -->
-                <div class="section">
-                    <h2>Demo Video</h2>
-                    <div class="video-container">
-                        <iframe 
-                            src="img/RDS-Demo.mp4" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p>
-                        This demonstration video showcases the complete assembly process, highlighting the precision robotics, 
-                        quality control checkpoints, and real-time system monitoring capabilities of the automated manufacturing line.
-                    </p>
-                </div>
 
-                <!-- Mechanical Design -->
-                <div class="section">
-                    <h2>Mechanical Design</h2>
-                    <p>
-                        The mechanical design focused on creating a robust, scalable system capable of handling complex assembly 
-                        operations with minimal downtime. Each component was engineered for precision, reliability, and ease of maintenance.
-                    </p>
+<div class="section">
+            <h2>Governing Equations</h2>
 
-                    <!-- Component 1 - Right Aligned Image -->
-                    <div class="design-subsection">
-                        <div class="subsection-content right-image">
-                            <div class="subsection-text">
-                                <h3>Robot Finger</h3>
-                                <p>
-                                    The robot finger subsystem is engineered to closely replicate human finger curling motions, featuring 
-                                    two actively actuated joints that deliver smooth, natural articulation. Rather than relying on a traditional
-                                    gear train, it uses a pulley-driven transmission with a 4:1 ratio at each joint, enhancing torque delivery
-                                    while maintaining a compact profile. High-performance Maxon EC 45 flat motors supply the requisite torque 
-                                    density without adding bulk. To ensure stability under load, stainless steel cables are tensioned using 
-                                    simple screws and nuts, and magnetic encoders provide precise positional data for fine-tuned control. 
-                                     
-                                </p>
-                                <p>
-                                    Structural components are fabricated through both water jet cutting and CNC milling for accuracy and 
-                                    durability. While performance and torque efficiency meet design goals, refining linkage interfaces and 
-                                    streamlining the assembly process remains an ongoing priority.
-                                </p>
-                            </div>
-                            <div class="subsection-image">
-                                <img src="img/rfinger.png" alt="Robotic Assembly Arms">
-                                <div class="image-caption">Six-axis robotic arms with precision grippers and force feedback systems</div>
-                            </div>
-                        </div>
-                    </div>
+    <h3>Lagrangian Mechanics</h3>
+    <p>
+        Motion is derived from the Lagrangian <span class="math">\( L = KE - PE \)</span>, where <em>KE</em> is kinetic energy and <em>PE</em> is gravitational potential energy.
+        Spatial velocity vectors are used (<span class="math">\( V = M6 \text{ representation of } \dot{g} g^{-1} \)</span>), and <span class="math">\( KE = \frac{1}{2} V^\top I V \)</span>.
+        Euler-Lagrange equations govern the motion:
+    </p>
+    <p class="math">
+        $$ \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial L}{\partial q} = F $$
+    </p>
 
-                    <!-- Component 2 - Left Aligned Image -->
-                    <div class="design-subsection">
-                        <div class="subsection-content left-image">
-                            <div class="subsection-image">
-                                <img src="img/hfinger.png" alt="Conveyor System">
-                                <div class="image-caption">Intelligent conveyor network with RFID tracking and dynamic routing</div>
-                            </div>
-                            <div class="subsection-text">
-                                <h3>Haptic Finger</h3>
-                                <p>
-                                    The haptic finger subsystem recreates human finger dynamics, offering two actively controlled joints 
-                                    (MCP and PIP) plus an additional passive degree of freedom for a more natural range of motion. 
-                                    Stainless steel cables, routed through machined pulleys, maintain precise motion transfer. 
-                                </p>
-                                <p>
-                                    Cables are tensioned using vented screws and wing nuts, allowing convenient adjustments and 
-                                    steady performance over time. Similar to other designs Maxon ECX Torque 22XL motors drive the system 
-                                    and are mounted near the palm. The motors are placed in such a way that they do not interfere with the 
-                                    mounting of the haptic thumb. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+    <h3>Hamiltonian</h3>
+    <p>
+        The Hamiltonian, a representation of total energy, is used for impact handling:
+    </p>
+    <p class="math">
+        $$ H = \dot{q}^\top \frac{\partial L}{\partial \dot{q}} - L $$
+        $$ \dot{q}^{+} - \dot{q}^{-} = \phi_q^\top \lambda $$
+    </p>
 
-                    <!-- Component 3 - Top Aligned Image -->
-                    <div class="design-subsection">
-                        <div class="subsection-content left-image">
-                            <div class="subsection-image">
-                                <img src="img/rthumb.png" alt="Quality Control Station">
-                                <div class="image-caption">Advanced quality control station with machine vision and precision measurement</div>
-                            </div>
-                            <div class="subsection-text">
-                                <h3>Robot Thumb</h3>
-                                <p>
-                                    Similar to the robot finger, the robot thumb is tailored to replicate the dexterity and form factor of the 
-                                    human thumb, offering two actuated degrees of freedom to produce both 'waggle' (abduction/adduction: motion 
-                                    that moves the thumb away from the palm) and 'curl' (flexion/extension: curling or extending your thumb) 
-                                    motions. The 'waggle' joint operates at a 7.33:1 transmission ratio, driven by Maxon ECX Torque 22XL motors 
-                                    for steady, responsive motion. In contrast, the 'curl' movement uses a 7.94:1 ratio powered by Maxon EC 45 
-                                    Flat motors, chosen for their compact design and strong torque-to-size ratio. 
-                                </p>
-                                <p>
-                                    Multiple cable wraps, tensioning blocks, and CNC-machined pulleys work together to maintain tension. 
-                                    High-precision machining, including turning and milling, ensures tight tolerances and secure mechanical 
-                                    coupling. Similar to the finger, there are still some issues regarding tensioning which would likely be 
-                                    resolved by refining the pulley system and having an easier method for tensioning.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+    <h3>Constraints and Impacts</h3>
+    <p>
+        Geometric relationships between jacks and box boundaries are expressed as algebraic constraints:
+    </p>
+    <p class="math">
+        $$ \phi_i(q) = 0 $$
+    </p>
+    <p>
+        Post-impact velocities are updated using Lagrange multipliers:
+    </p>
+    <p class="math">
+        $$ \dot{q}^{+} - \dot{q}^{-} = \phi_q^\top \lambda $$
+    </p>
 
-                    <!-- Component 4 - Right Aligned Image -->
-                    <div class="design-subsection">
-                        <div class="subsection-content right-image">
-                            <div class="subsection-text">
-                                <h3>Haptic Thumb</h3>
-                                <p>
-                                     The haptic thumb subsystem attempts to emulate the range of motion for the human thumb with only 2 
-                                     driven degrees of freedom. Similar to the robot thumb it offers 'waggle' and 'curl' motions enhanced by 
-                                     an additional passive degree of freedom. Cable tension is managed via a series of idler pulleys and 
-                                     vented fasteners to achieve smooth, consistent engagement. Maxon ECX motors drive the both the 'waggle' 
-                                     and 'curl' motions, and a rotating fitting allows your thumb to freely swivel within the mechanism. 
-                                </p>
-                                <p>
-                                    A flexible TPU thimble interface accommodates various thumb sizes while preserving a secure, ergonomic 
-                                    fit. CNC-machined elements support a sturdy yet lightweight structure. Friction in the cable system 
-                                    occasionally emerges during operation, but we believe this issue could be fixed with higher tolerance 
-                                    pulleys, and a less complex way to tension the cables.
-                                </p>
-                            </div>
-                            <div class="subsection-image">
-                                <img src="img/thumb.png" alt="Control System">
-                                <div class="image-caption">Centralized control system with real-time monitoring and predictive analytics</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Results & Impact -->
-                <div class="section">
-                    <h2>Results & Impact</h2>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <div class="result-number">42%</div>
-                            <div class="result-label">Efficiency Increase</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number">$450K</div>
-                            <div class="result-label">Annual Savings</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number">78%</div>
-                            <div class="result-label">Defect Reduction</div>
-                        </div>
-                    </div>
-                    <p>
-                        The automated manufacturing system exceeded all performance targets, achieving 42% efficiency improvement 
-                        and reducing defect rates from 15% to 3.3%. The system processes 150 units per hour compared to the 
-                        previous 90 units, while requiring 60% fewer operators and reducing material waste by 35%.
-                    </p>
-                    <p>
-                        Beyond quantitative improvements, the system enhanced workplace safety by eliminating repetitive manual 
-                        tasks and hazardous operations. The implementation served as a model for the client's other facilities, 
-                        with plans to deploy similar systems across their global manufacturing network.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Numerical Integration -->
+    <h3>Numerical Integration</h3>
+    <p>
+        Time integration uses a 4th-order Runge-Kutta (RK4) scheme. The simulation loop integrates motion, checks for collisions 
+        via constraint functions, and applies post-impact updates using Hamiltonian-based impulse equations.
+    </p>
+</div>
+
+<!-- Tools and Techniques -->
+<div class="section">
+    <h2>Tools and Techniques</h2>
+    <ul>
+        <li><strong>Python Libraries:</strong> sympy (symbolic derivation), numpy (numerical evaluation), matplotlib (plots), plotly (animation).</li>
+        <li><strong>Mathematical Techniques:</strong> Lagrangian mechanics, Hamiltonian formulation, coordinate transformations, constraint enforcement, impulsive impact dynamics, RK4 integration.</li>
+        <li><strong>Mechanical Modeling:</strong> Multi-body rigid bodies with translational and rotational degrees of freedom, collision detection, constraint propagation.</li>
+    </ul>
+</div>
+
+<!-- Key Outcomes -->
+<div class="section">
+    <h2>Results</h2>
+    <p>
+        The simulation successfully produced realistic trajectories for both the jacks and the box, capturing both smooth motion and abrupt changes due to impacts. 
+        By deriving the dynamics symbolically, the system could enforce constraints accurately and respond to collisions in real time, providing insights into multi-body interactions that would be difficult to measure experimentally.
+    </p>
+    <p>
+        Interactive visualizations allowed for detailed analysis of translational and rotational motion, demonstrating the effectiveness of the Lagrangian and Hamiltonian formulations in modeling complex mechanical behavior. 
+        Overall, the project established a flexible, modular framework that can be extended to more sophisticated mechanical systems, control strategies, or simulations involving multiple colliding bodies.
+    </p>
+</div>
+
 
     <!-- Project Navigation -->
     <section class="project-nav">

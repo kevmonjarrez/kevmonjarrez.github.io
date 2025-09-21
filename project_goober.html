@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Project Name] - [Your Name]</title>
+    <title>Injection Mold Design - Goober Figurine - [Your Name]</title>
     <style>
         * {
             margin: 0;
@@ -17,25 +17,29 @@
             color: #4a5568;
             background: #f7fafc;
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
 
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(247, 250, 252, 0.95);
-            backdrop-filter: blur(20px);
+            background: #4a5568;
             z-index: 1000;
-            padding: 20px 0;
+            padding: 15px 0;
             transition: all 0.3s ease;
-            border-bottom: 1px solid #e2e8f0;
+            box-sizing: border-box;
         }
 
         .nav-content {
@@ -47,7 +51,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #2d3748;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -59,14 +63,14 @@
         }
 
         .nav-links a {
-            color: #4a5568;
+            color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: #2d3748;
+            color: #cbd5e0;
         }
 
         .back-link {
@@ -74,7 +78,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 8px 16px;
-            background: #4a5568;
+            background: #2d3748;
             color: #fff !important;
             border-radius: 6px;
             font-size: 0.9rem;
@@ -82,11 +86,11 @@
         }
 
         .back-link:hover {
-            background: #2d3748;
+            background: #1a202c;
             color: #fff !important;
         }
 
-        /* Hero Section */
+        /* Project Hero */
         .project-hero {
             padding: 120px 0 80px;
             background: #edf2f7;
@@ -164,32 +168,20 @@
             background: #fff;
         }
 
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
         .main-content {
             max-width: none;
         }
 
-        .sidebar {
-            position: sticky;
-            top: 120px;
-        }
-
         .section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #2d3748;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #4a5568;
+            padding-bottom: 1rem;
         }
 
         .section p {
@@ -209,115 +201,93 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .gallery-item {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(74, 85, 104, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #4a5568, #2d3748);
-        }
-
-        .gallery-caption {
-            padding: 1rem;
-            background: #fff;
-            font-size: 0.9rem;
-            color: #718096;
-        }
-
-        /* Sidebar Content */
-        .info-box {
-            background: #f7fafc;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border: 1px solid #e2e8f0;
-        }
-
-        .info-box h3 {
-            color: #2d3748;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .info-item {
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
+        /* Design Subsections */
+        .design-subsection {
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
             border-bottom: 1px solid #e2e8f0;
         }
 
-        .info-item:last-child {
+        .design-subsection:last-child {
             border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
         }
 
-        .info-label {
-            font-size: 0.9rem;
+        .subsection-content {
+            display: grid;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Right aligned image */
+        .subsection-content.right-image {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        /* Left aligned image */
+        .subsection-content.left-image {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        /* Top aligned image */
+        .subsection-content.top-image {
+            grid-template-columns: 1fr;
+        }
+
+        .subsection-text h3 {
+            color: #2d3748;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #4a5568;
+            padding-left: 1.5rem;
+        }
+
+        .subsection-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .subsection-image {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Consistent sizing for all subsection images */
+        .subsection-content.right-image .subsection-image,
+        .subsection-content.left-image .subsection-image {
+            width: 100%;
+            height: 300px;
+        }
+
+        .subsection-content.top-image .subsection-image {
+            width: 100%;
+            height: 350px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .subsection-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(74, 85, 104, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .subsection-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            font-size: 0.95rem;
             color: #718096;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.3rem;
-        }
-
-        .info-value {
-            color: #2d3748;
-            font-weight: 500;
-        }
-
-        /* Project Links */
-        .project-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .project-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 12px 20px;
-            background: #4a5568;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-style: italic;
             text-align: center;
-            justify-content: center;
-        }
-
-        .project-link:hover {
-            background: #2d3748;
-            transform: translateY(-2px);
-        }
-
-        .project-link.secondary {
-            background: transparent;
-            color: #4a5568;
-            border: 1px solid #cbd5e0;
-        }
-
-        .project-link.secondary:hover {
-            background: #e2e8f0;
-            color: #2d3748;
+            padding: 0 1rem;
         }
 
         /* Results/Outcomes */
@@ -325,19 +295,19 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
 
         .result-item {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             background: #f7fafc;
             border-radius: 12px;
             border: 1px solid #e2e8f0;
         }
 
         .result-number {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: #2d3748;
             line-height: 1;
@@ -346,9 +316,36 @@
 
         .result-label {
             color: #4a5568;
-            font-size: 0.9rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        /* Challenges & Solutions */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .challenge-item {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #4a5568;
+        }
+
+        .challenge-item h4 {
+            color: #2d3748;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .challenge-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0;
         }
 
         /* Navigation between projects */
@@ -371,7 +368,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             background: #fff;
             color: #4a5568;
             text-decoration: none;
@@ -464,13 +461,22 @@
                 gap: 2rem;
             }
 
-            .content-grid {
+            .subsection-content.right-image,
+            .subsection-content.left-image {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
 
-            .sidebar {
-                position: static;
+            .subsection-content.left-image .subsection-image {
+                order: -1;
+            }
+
+            .subsection-content.right-image .subsection-image,
+            .subsection-content.left-image .subsection-image {
+                height: 250px;
+            }
+
+            .subsection-content.top-image .subsection-image {
+                height: 280px;
             }
 
             .project-nav-links {
@@ -490,7 +496,15 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .image-gallery {
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .subsection-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .challenge-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -538,36 +552,39 @@
     <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
-            <p class="project-type">[Project Category - e.g., Manufacturing Systems]</p>
-            <h1>[Project Title]</h1>
+            <p class="project-type">Injection Molding & Product Design</p>
+            <h1>Goober Figurine Design</h1>
             <p class="project-summary">
-                [Brief project summary - 2-3 sentences describing the project's main purpose and impact]
+                A comprehensive injection molding project involving the design and manufacture of a fun alien figurine 
+                toy that operates as a functional rubber band slingshot while demonstrating advanced manufacturing techniques.
             </p>
             
             <div class="project-meta">
                 <div class="meta-item">
                     <div class="meta-label">Duration</div>
-                    <div class="meta-value">[Time Period]</div>
+                    <div class="meta-value">12 Weeks</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Role</div>
-                    <div class="meta-value">[Your Role]</div>
+                    <div class="meta-value">Design Engineer</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Team Size</div>
-                    <div class="meta-value">[Number of people]</div>
+                    <div class="meta-value">4 People</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Industry</div>
-                    <div class="meta-value">[Industry/Sector]</div>
+                    <div class="meta-value">Consumer Products</div>
                 </div>
             </div>
 
             <div class="tech-stack">
-                <span class="tech-tag">[Tool/Software 1]</span>
-                <span class="tech-tag">[Tool/Software 2]</span>
-                <span class="tech-tag">[Tool/Software 3]</span>
-                <span class="tech-tag">[Tool/Software 4]</span>
+                <span class="tech-tag">SolidWorks</span>
+                <span class="tech-tag">CAM Programming</span>
+                <span class="tech-tag">CNC Machining</span>
+                <span class="tech-tag">Injection Molding</span>
+                <span class="tech-tag">Metrology</span>
+                <span class="tech-tag">Quality Control</span>
             </div>
         </div>
     </section>
@@ -575,97 +592,193 @@
     <!-- Main Content -->
     <section class="project-content">
         <div class="container">
-            <div class="content-grid">
-                <div class="main-content">
-                    <!-- Project Overview -->
-                    <div class="section">
-                        <h2>Project Overview</h2>
-                        <p>
-                            [Detailed description of the project. Explain the problem you were solving, 
-                            the context, and why this project was important. This should be 2-3 paragraphs 
-                            that give the reader a comprehensive understanding of the project scope.]
-                        </p>
-                        <p>
-                            [Continue with more details about the project background, stakeholders involved, 
-                            and the specific engineering challenges that needed to be addressed.]
-                        </p>
-                    </div>
-
-                    <!-- Challenge & Solution -->
-                    <div class="section">
-                        <h2>Challenge & Solution</h2>
-                        <p>
-                            [Describe the specific technical challenges you faced. What made this project 
-                            difficult or complex? What constraints did you need to work within?]
-                        </p>
-                        <ul>
-                            <li>[Specific challenge 1 and how you approached it]</li>
-                            <li>[Specific challenge 2 and your solution]</li>
-                            <li>[Specific challenge 3 and the outcome]</li>
-                        </ul>
-                        <p>
-                            [Explain your solution approach, methodology, and why you chose this particular path.]
-                        </p>
-                    </div>
-
-                    <!-- Technical Details -->
-                    <div class="section">
-                        <h2>Technical Implementation</h2>
-                        <p>
-                            [Dive into the technical details. What engineering principles did you apply? 
-                            What calculations, simulations, or analyses did you perform? What design decisions 
-                            did you make and why?]
-                        </p>
-                        <p>
-                            [Include specific technical details like materials chosen, design parameters, 
-                            performance specifications, manufacturing considerations, etc.]
-                        </p>
-                    </div>
-
-                    <!-- Results & Impact -->
-                    <div class="section">
-                        <h2>Results & Impact</h2>
-                        <div class="results-grid">
-                            <div class="result-item">
-                                <div class="result-number">[40%]</div>
-                                <div class="result-label">[Improvement Metric]</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">[$25K]</div>
-                                <div class="result-label">[Cost Savings]</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">[30%]</div>
-                                <div class="result-label">[Efficiency Gain]</div>
-                            </div>
-                        </div>
-                        <p>
-                            [Explain the quantifiable results and impact of your project. How did you measure 
-                            success? What improvements were achieved? How did this benefit the organization 
-                            or end users?]
-                        </p>
-                    </div>
-
-                    <!-- Images/Visuals -->
-                    <div class="section">
-                        <h2>Project Visuals</h2>
-                        <div class="image-gallery">
-                            <div class="gallery-item">
-                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=250&fit=crop" alt="Project Image 1">
-                                <div class="gallery-caption">[Caption describing this image/diagram]</div>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="https://images.unsplash.com/photo-1565008576018-7ba8b42c2c47?w=400&h=250&fit=crop" alt="Project Image 2">
-                                <div class="gallery-caption">[Caption describing this image/diagram]</div>
-                            </div>
-                        </div>
-                    </div>
-
-
+            <div class="main-content">
+                <!-- Background -->
+                <div class="section">
+                    <h2>Background</h2>
+                    <p>
+                        This project challenged our team to design and manufacture a small figurine that would function as 
+                        an entertaining toy while demonstrating mastery of injection molding processes. The "Goober" figurine 
+                        was designed to serve as an interactive rubber band slingshot, combining playful aesthetics with 
+                        practical functionality.
+                    </p>
+                    <p>
+                        The project encompassed the entire product development lifecycle, from initial concept sketches 
+                        through final quality analysis. Success would be measured by slingshot performance, manufacturing 
+                        feasibility, dimensional accuracy, and the aesthetic appeal that would make the figurine engaging 
+                        and fun to use.
+                    </p>
                 </div>
 
-                <!-- Sidebar -->
-                <div class="sidebar">
+                <!-- Design Process -->
+                <div class="section">
+                    <h2>Design Process</h2>
+                    
+                    <!-- Concept Development -->
+                    <div class="design-subsection">
+                        <div class="subsection-content right-image">
+                            <div class="subsection-text">
+                                <h3>Concept Development</h3>
+                                <p>
+                                    The design process began with ideation sketches emphasizing a space and extraterrestrial theme 
+                                    to create an engaging, playful character. Through iterative development, we arrived at a compact 
+                                    Y-shaped form that effectively integrated slingshot functionality while maintaining the fun, 
+                                    alien aesthetic that would appeal to users.
+                                </p>
+                                <p>
+                                    Key design features included upward-sloped eyebrows and divots under the eyes for secure rubber 
+                                    band retention, flat feet for stability during slingshot operation, and finger grip areas for 
+                                    comfortable handling. The friendly facial features including eyes, mouth, and tongue gave the 
+                                    figurine personality and charm.
+                                </p>
+                            </div>
+                            <div class="subsection-image">
+                                <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=500&h=400&fit=crop" alt="Design Sketches">
+                                <div class="image-caption">Initial concept sketches showing Y-shaped form and functional features</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Specifications -->
+                    <div class="design-subsection">
+                        <div class="subsection-content left-image">
+                            <div class="subsection-image">
+                                <img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=500&h=400&fit=crop" alt="CAD Model">
+                                <div class="image-caption">Final CAD model showing pin-and-hole assembly and wall thickness details</div>
+                            </div>
+                            <div class="subsection-text">
+                                <h3>Technical Specifications</h3>
+                                <p>
+                                    Critical design decisions included implementing a 1° draft angle to minimize visible seams 
+                                    and 1/16 inch wall thickness throughout for structural consistency and optimal material flow 
+                                    during injection molding.
+                                </p>
+                                <p>
+                                    The assembly system utilized a pin-and-hole interference fit, selected for ease of tolerance 
+                                    calculation and post-manufacture adjustability. Holes were intentionally undersized to allow 
+                                    fine-tuning of fit during assembly testing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manufacturing Process -->
+                <div class="section">
+                    <h2>Manufacturing Process</h2>
+                    
+                    <!-- Mold Design -->
+                    <div class="design-subsection">
+                        <div class="subsection-content top-image">
+                            <div class="subsection-image">
+                                <img src="https://images.unsplash.com/photo-1565008576018-7ba8b42c2c47?w=800&h=400&fit=crop" alt="Mold Design">
+                                <div class="image-caption">Injection mold design showing core, cavity, and runner system</div>
+                            </div>
+                            <div class="subsection-text">
+                                <h3>Mold Design & Machining</h3>
+                                <p>
+                                    The mold design accounted for material shrinkage and ensured uniform wall thickness, particularly 
+                                    around critical pin and hole features. The part was oriented upright with an unobtrusive parting 
+                                    line designed to be hidden during normal use.
+                                </p>
+                                <p>
+                                    A single ¼-inch runner system minimized material waste and freezing issues while allowing for 
+                                    future modification. Multi-step CNC operations included roughing, finishing, planar milling, 
+                                    and specialized wall profiling with tapered end mills to achieve tight radii and complex geometries.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Injection Molding -->
+                    <div class="design-subsection">
+                        <div class="subsection-content right-image">
+                            <div class="subsection-text">
+                                <h3>Injection Molding Optimization</h3>
+                                <p>
+                                    Injection molding parameters were carefully optimized through iterative testing to minimize defects. 
+                                    Initial runs revealed short shots due to insufficient material flow and injection pressure, with 
+                                    defects concentrated in specific mold corners requiring geometric modifications.
+                                </p>
+                                <p>
+                                    Process refinements included adjusting injection pressure, optimizing cooling times, and improving 
+                                    mold face alignment to reduce flash formation. Metal pin integrity was critical, with several pins 
+                                    requiring replacement after dislodging during early molding trials.
+                                </p>
+                            </div>
+                            <div class="subsection-image">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&h=400&fit=crop" alt="Injection Molding Process">
+                                <div class="image-caption">Injection molding setup showing parameter optimization and quality control</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quality Analysis -->
+                <div class="section">
+                    <h2>Quality Analysis & Metrology</h2>
+                    <p>
+                        Comprehensive dimensional inspection focused on critical features including waist dimensions, eye base 
+                        measurements, and eye-to-eye spacing. Our metrology analysis revealed important insights about the 
+                        manufacturing process and identified opportunities for improvement.
+                    </p>
+
+                    <div class="challenge-grid">
+                        <div class="challenge-item">
+                            <h4>Shrinkage Effects</h4>
+                            <p>Material shrinkage caused measurable reductions in key dimensions, with only approximately 65% of parts falling within specified tolerances, highlighting the importance of shrinkage compensation in mold design.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h4>Handling Artifacts</h4>
+                            <p>Some expansion in waist dimensions resulted from part deflection during removal from the mold, indicating the need for improved cooling time and gentler ejection methods.</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h4>Mold Alignment</h4>
+                            <p>Slight off-center machining caused asymmetric leg placement and wall thickness variation, affecting assembly consistency and demonstrating the critical nature of precise CAM programming.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results & Impact -->
+                <div class="section">
+                    <h2>Results & Impact</h2>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-number">65%</div>
+                            <div class="result-label">Parts in Tolerance</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">95%</div>
+                            <div class="result-label">Functional Success</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">100%</div>
+                            <div class="result-label">Assembly Rate</div>
+                        </div>
+                    </div>
+                    <p>
+                        Despite minor defects and manufacturing challenges, the project successfully produced functional, 
+                        aesthetically pleasing figurines that performed excellently as rubber band slingshots. The "Goober" 
+                        figurines demonstrated excellent durability, user appeal, and consistent slingshot performance during testing.
+                    </p>
+                    <p>
+                        Key achievements included successful implementation of complex geometries that balanced functionality 
+                        with visual appeal, effective problem-solving during manufacturing challenges, and comprehensive quality 
+                        analysis that informed future design iterations. The project demonstrated strong collaboration and 
+                        technical proficiency throughout all phases of product development.
+                    </p>
+                </div>
+
+                <!-- Lessons Learned -->
+                <div class="section">
+                    <h2>Key Insights & Recommendations</h2>
+                    <ul>
+                        <li><strong>Design for Machining:</strong> Early simplification of complex features reduced CAM programming complexity and prevented tool collisions during manufacturing.</li>
+                        <li><strong>CAD Geometry Linking:</strong> Proper WaveLinking between mold halves could have prevented alignment issues that affected part symmetry and dimensional consistency.</li>
+                        <li><strong>Mold Balance Optimization:</strong> Adjusting part geometry to better balance upper and lower mold halves would improve gate placement and enhance visual appearance.</li>
+                        <li><strong>Process Parameter Refinement:</strong> Iterative adjustments to injection pressure, cooling times, and mold temperature enabled significant improvements in molding efficiency and part quality.</li>
+                        <li><strong>Quality Control Integration:</strong> Earlier implementation of statistical process control could have identified trends more quickly and reduced the number of out-of-tolerance parts.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -675,19 +788,19 @@
     <section class="project-nav">
         <div class="container">
             <div class="project-nav-links">
-                <a href="[previous-project].html" class="project-nav-link">
+                <a href="automated-manufacturing.html" class="project-nav-link">
                     <div class="nav-arrow">←</div>
                     <div class="nav-text">
                         <div class="nav-label">Previous Project</div>
-                        <div class="nav-title">[Previous Project Name]</div>
+                        <div class="nav-title">Automated Manufacturing System</div>
                     </div>
                 </a>
                 
-                <a href="[next-project].html" class="project-nav-link next">
+                <a href="materials-testing.html" class="project-nav-link next">
                     <div class="nav-arrow">→</div>
                     <div class="nav-text">
                         <div class="nav-label">Next Project</div>
-                        <div class="nav-title">[Next Project Name]</div>
+                        <div class="nav-title">Advanced Materials Testing</div>
                     </div>
                 </a>
             </div>
@@ -708,9 +821,9 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.style.background = 'rgba(247, 250, 252, 0.98)';
+                nav.style.background = '#2d3748';
             } else {
-                nav.style.background = 'rgba(247, 250, 252, 0.95)';
+                nav.style.background = '#4a5568';
             }
         });
 
