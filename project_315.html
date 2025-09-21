@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Project Name] - [Your Name]</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #4a5568;
+            background: #f7fafc;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(247, 250, 252, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #2d3748;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 8px 16px;
+            background: #4a5568;
+            color: #fff !important;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #2d3748;
+            color: #fff !important;
+        }
+
+        /* Hero Section */
+        .project-hero {
+            padding: 120px 0 80px;
+            background: #edf2f7;
+            text-align: center;
+        }
+
+        .project-hero h1 {
+            font-size: 3.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .project-type {
+            color: #4a5568;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-summary {
+            font-size: 1.3rem;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 0.9rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.1rem;
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .tech-tag {
+            padding: 8px 16px;
+            background: #e2e8f0;
+            color: #4a5568;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .project-content {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .main-content {
+            max-width: none;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 120px;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(74, 85, 104, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #4a5568, #2d3748);
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            background: #fff;
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        /* Sidebar Content */
+        .info-box {
+            background: #f7fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-box h3 {
+            color: #2d3748;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-value {
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        /* Project Links */
+        .project-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 20px;
+            background: #4a5568;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .project-link:hover {
+            background: #2d3748;
+            transform: translateY(-2px);
+        }
+
+        .project-link.secondary {
+            background: transparent;
+            color: #4a5568;
+            border: 1px solid #cbd5e0;
+        }
+
+        .project-link.secondary:hover {
+            background: #e2e8f0;
+            color: #2d3748;
+        }
+
+        /* Results/Outcomes */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f7fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .result-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d3748;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-label {
+            color: #4a5568;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation between projects */
+        .project-nav {
+            background: #edf2f7;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .project-nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+
+        .project-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: #fff;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .project-nav-link:hover {
+            background: #f7fafc;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(74, 85, 104, 0.1);
+        }
+
+        .project-nav-link.next {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .nav-arrow {
+            font-size: 1.5rem;
+        }
+
+        .nav-text {
+            flex: 1;
+        }
+
+        .nav-label {
+            font-size: 0.8rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-title {
+            font-size: 1.1rem;
+            color: #2d3748;
+            font-weight: 600;
+            margin-top: 0.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #4a5568;
+            color: #fff;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        footer h3 {
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .footer-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links a:not(.back-link) {
+                display: none;
+            }
+
+            .project-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .project-meta {
+                gap: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .project-nav-links {
+                flex-direction: column;
+            }
+
+            .project-nav-link {
+                max-width: none;
+            }
+
+            .project-nav-link.next {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f7fafc;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2d3748;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">[Your Name]</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html" class="back-link">← Back to Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <p class="project-type">[Project Category - e.g., Manufacturing Systems]</p>
+            <h1>[Project Title]</h1>
+            <p class="project-summary">
+                [Brief project summary - 2-3 sentences describing the project's main purpose and impact]
+            </p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Duration</div>
+                    <div class="meta-value">[Time Period]</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">[Your Role]</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Team Size</div>
+                    <div class="meta-value">[Number of people]</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Industry</div>
+                    <div class="meta-value">[Industry/Sector]</div>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">[Tool/Software 1]</span>
+                <span class="tech-tag">[Tool/Software 2]</span>
+                <span class="tech-tag">[Tool/Software 3]</span>
+                <span class="tech-tag">[Tool/Software 4]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="project-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <!-- Project Overview -->
+                    <div class="section">
+                        <h2>Project Overview</h2>
+                        <p>
+                            [Detailed description of the project. Explain the problem you were solving, 
+                            the context, and why this project was important. This should be 2-3 paragraphs 
+                            that give the reader a comprehensive understanding of the project scope.]
+                        </p>
+                        <p>
+                            [Continue with more details about the project background, stakeholders involved, 
+                            and the specific engineering challenges that needed to be addressed.]
+                        </p>
+                    </div>
+
+                    <!-- Challenge & Solution -->
+                    <div class="section">
+                        <h2>Challenge & Solution</h2>
+                        <p>
+                            [Describe the specific technical challenges you faced. What made this project 
+                            difficult or complex? What constraints did you need to work within?]
+                        </p>
+                        <ul>
+                            <li>[Specific challenge 1 and how you approached it]</li>
+                            <li>[Specific challenge 2 and your solution]</li>
+                            <li>[Specific challenge 3 and the outcome]</li>
+                        </ul>
+                        <p>
+                            [Explain your solution approach, methodology, and why you chose this particular path.]
+                        </p>
+                    </div>
+
+                    <!-- Technical Details -->
+                    <div class="section">
+                        <h2>Technical Implementation</h2>
+                        <p>
+                            [Dive into the technical details. What engineering principles did you apply? 
+                            What calculations, simulations, or analyses did you perform? What design decisions 
+                            did you make and why?]
+                        </p>
+                        <p>
+                            [Include specific technical details like materials chosen, design parameters, 
+                            performance specifications, manufacturing considerations, etc.]
+                        </p>
+                    </div>
+
+                    <!-- Results & Impact -->
+                    <div class="section">
+                        <h2>Results & Impact</h2>
+                        <div class="results-grid">
+                            <div class="result-item">
+                                <div class="result-number">[40%]</div>
+                                <div class="result-label">[Improvement Metric]</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-number">[$25K]</div>
+                                <div class="result-label">[Cost Savings]</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-number">[30%]</div>
+                                <div class="result-label">[Efficiency Gain]</div>
+                            </div>
+                        </div>
+                        <p>
+                            [Explain the quantifiable results and impact of your project. How did you measure 
+                            success? What improvements were achieved? How did this benefit the organization 
+                            or end users?]
+                        </p>
+                    </div>
+
+                    <!-- Images/Visuals -->
+                    <div class="section">
+                        <h2>Project Visuals</h2>
+                        <div class="image-gallery">
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=250&fit=crop" alt="Project Image 1">
+                                <div class="gallery-caption">[Caption describing this image/diagram]</div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1565008576018-7ba8b42c2c47?w=400&h=250&fit=crop" alt="Project Image 2">
+                                <div class="gallery-caption">[Caption describing this image/diagram]</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Navigation -->
+    <section class="project-nav">
+        <div class="container">
+            <div class="project-nav-links">
+                <a href="[previous-project].html" class="project-nav-link">
+                    <div class="nav-arrow">←</div>
+                    <div class="nav-text">
+                        <div class="nav-label">Previous Project</div>
+                        <div class="nav-title">[Previous Project Name]</div>
+                    </div>
+                </a>
+                
+                <a href="[next-project].html" class="project-nav-link next">
+                    <div class="nav-arrow">→</div>
+                    <div class="nav-text">
+                        <div class="nav-label">Next Project</div>
+                        <div class="nav-title">[Next Project Name]</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Interested in working together?</h3>
+            <p>Let's discuss your next engineering challenge.</p>
+            <a href="index.html#contact" class="footer-link">Get In Touch</a>
+        </div>
+    </footer>
+
+    <script>
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(247, 250, 252, 0.98)';
+            } else {
+                nav.style.background = 'rgba(247, 250, 252, 0.95)';
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
