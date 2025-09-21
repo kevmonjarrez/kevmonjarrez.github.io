@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Project Name] - [Your Name]</title>
+    <title>Haptic/Robotic Telecommunication System</title>
     <style>
         * {
             margin: 0;
@@ -17,25 +17,29 @@
             color: #4a5568;
             background: #f7fafc;
             overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
 
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(247, 250, 252, 0.95);
-            backdrop-filter: blur(20px);
+            background: #4a5568;
             z-index: 1000;
-            padding: 20px 0;
+            padding: 15px 0;
             transition: all 0.3s ease;
-            border-bottom: 1px solid #e2e8f0;
+            box-sizing: border-box;
         }
 
         .nav-content {
@@ -47,7 +51,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #2d3748;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -59,14 +63,14 @@
         }
 
         .nav-links a {
-            color: #4a5568;
+            color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: #2d3748;
+            color: #cbd5e0;
         }
 
         .back-link {
@@ -74,7 +78,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 8px 16px;
-            background: #4a5568;
+            background: #2d3748;
             color: #fff !important;
             border-radius: 6px;
             font-size: 0.9rem;
@@ -82,11 +86,11 @@
         }
 
         .back-link:hover {
-            background: #2d3748;
+            background: #1a202c;
             color: #fff !important;
         }
 
-        /* Hero Section */
+        /* Project Hero */
         .project-hero {
             padding: 120px 0 80px;
             background: #edf2f7;
@@ -164,32 +168,20 @@
             background: #fff;
         }
 
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
         .main-content {
             max-width: none;
         }
 
-        .sidebar {
-            position: sticky;
-            top: 120px;
-        }
-
         .section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #2d3748;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #4a5568;
+            padding-bottom: 1rem;
         }
 
         .section p {
@@ -198,126 +190,124 @@
             margin-bottom: 1.5rem;
         }
 
-        .section ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .section li {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        /* Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
             margin: 2rem 0;
-        }
-
-        .gallery-item {
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(74, 85, 104, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(74, 85, 104, 0.15);
         }
 
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .gallery-item img {
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #4a5568, #2d3748);
+            height: 100%;
         }
 
-        .gallery-caption {
-            padding: 1rem;
-            background: #fff;
-            font-size: 0.9rem;
-            color: #718096;
-        }
-
-        /* Sidebar Content */
-        .info-box {
-            background: #f7fafc;
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            border: 1px solid #e2e8f0;
-        }
-
-        .info-box h3 {
-            color: #2d3748;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .info-item {
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
+        /* Design Subsections */
+        .design-subsection {
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
             border-bottom: 1px solid #e2e8f0;
         }
 
-        .info-item:last-child {
+        .design-subsection:last-child {
             border-bottom: none;
             margin-bottom: 0;
-            padding-bottom: 0;
         }
 
-        .info-label {
-            font-size: 0.9rem;
+        .subsection-content {
+            display: grid;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Right aligned image */
+        .subsection-content.right-image {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        /* Left aligned image */
+        .subsection-content.left-image {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        /* Top aligned image */
+        .subsection-content.top-image {
+            grid-template-columns: 1fr;
+        }
+
+        .subsection-text h3 {
+            color: #2d3748;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #4a5568;
+            padding-left: 1.5rem;
+        }
+
+        .subsection-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .subsection-image {
+            position: relative;
+        }
+
+        .subsection-content.right-image .subsection-image,
+        .subsection-content.left-image .subsection-image {
+            width: 100%;
+            height: 300px;
+        }
+
+        .subsection-content.top-image .subsection-image {
+            width: 100%;
+            height: 350px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .subsection-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;
+            object-position: center;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(74, 85, 104, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .subsection-image img:hover {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            font-size: 0.95rem;
             color: #718096;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.3rem;
-        }
-
-        .info-value {
-            color: #2d3748;
-            font-weight: 500;
-        }
-
-        /* Project Links */
-        .project-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .project-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 12px 20px;
-            background: #4a5568;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-style: italic;
             text-align: center;
-            justify-content: center;
+            padding: 0 1rem;
         }
 
-        .project-link:hover {
-            background: #2d3748;
-            transform: translateY(-2px);
+        .subsection-image img:hover {
+            transform: scale(1.02);
         }
 
-        .project-link.secondary {
-            background: transparent;
-            color: #4a5568;
-            border: 1px solid #cbd5e0;
-        }
-
-        .project-link.secondary:hover {
-            background: #e2e8f0;
-            color: #2d3748;
+        .image-caption {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #718096;
+            font-style: italic;
+            text-align: center;
+            padding: 0 1rem;
         }
 
         /* Results/Outcomes */
@@ -325,19 +315,19 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
 
         .result-item {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             background: #f7fafc;
             border-radius: 12px;
             border: 1px solid #e2e8f0;
         }
 
         .result-number {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: #2d3748;
             line-height: 1;
@@ -346,7 +336,7 @@
 
         .result-label {
             color: #4a5568;
-            font-size: 0.9rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -371,7 +361,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             background: #fff;
             color: #4a5568;
             text-decoration: none;
@@ -464,13 +454,17 @@
                 gap: 2rem;
             }
 
-            .content-grid {
+            .subsection-content.right-image,
+            .subsection-content.left-image {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
 
-            .sidebar {
-                position: static;
+            .subsection-content.left-image .subsection-image {
+                order: -1;
+            }
+
+            .video-container {
+                padding-bottom: 75%;
             }
 
             .project-nav-links {
@@ -490,8 +484,12 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .image-gallery {
-                grid-template-columns: 1fr;
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .subsection-text h3 {
+                font-size: 1.5rem;
             }
         }
 
@@ -524,7 +522,7 @@
     <nav>
         <div class="container">
             <div class="nav-content">
-                <a href="index.html" class="logo">[Your Name]</a>
+                <a href="index.html" class="logo">Kevin Monjarrez</a>
                 <ul class="nav-links">
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#projects">Projects</a></li>
@@ -538,36 +536,29 @@
     <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
-            <p class="project-type">[Project Category - e.g., Manufacturing Systems]</p>
-            <h1>[Project Title]</h1>
+            <p class="project-type">Manufacturing Systems Engineering</p>
+            <h1>Jack In Box Physics Simualtion</h1>
             <p class="project-summary">
-                [Brief project summary - 2-3 sentences describing the project's main purpose and impact]
+                 a Python-based control pipeline for the KUKA youBot that enables simulated block manipulation 
+                 through trajectory planning and feedforward-feedback control in CoppeliaSim. 
             </p>
             
             <div class="project-meta">
                 <div class="meta-item">
                     <div class="meta-label">Duration</div>
-                    <div class="meta-value">[Time Period]</div>
+                    <div class="meta-value">15 Weeks</div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">Role</div>
-                    <div class="meta-value">[Your Role]</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">Team Size</div>
-                    <div class="meta-value">[Number of people]</div>
-                </div>
-                <div class="meta-item">
-                    <div class="meta-label">Industry</div>
-                    <div class="meta-value">[Industry/Sector]</div>
+                    <div class="meta-value">Mechanical Design</div>
                 </div>
             </div>
 
             <div class="tech-stack">
-                <span class="tech-tag">[Tool/Software 1]</span>
-                <span class="tech-tag">[Tool/Software 2]</span>
-                <span class="tech-tag">[Tool/Software 3]</span>
-                <span class="tech-tag">[Tool/Software 4]</span>
+                <span class="tech-tag">OnShape</span>
+                <span class="tech-tag">Siemens NX CAM</span>
+                <span class="tech-tag">MatLab</span>
+                <span class="tech-tag">Rapid Prototyping</span>
             </div>
         </div>
     </section>
@@ -575,119 +566,115 @@
     <!-- Main Content -->
     <section class="project-content">
         <div class="container">
-            <div class="content-grid">
-                <div class="main-content">
-                    <!-- Project Overview -->
-                    <div class="section">
-                        <h2>Project Overview</h2>
-                        <p>
-                            [Detailed description of the project. Explain the problem you were solving, 
-                            the context, and why this project was important. This should be 2-3 paragraphs 
-                            that give the reader a comprehensive understanding of the project scope.]
-                        </p>
-                        <p>
-                            [Continue with more details about the project background, stakeholders involved, 
-                            and the specific engineering challenges that needed to be addressed.]
-                        </p>
+            <div class="main-content">
+                <!-- Background -->
+                <div class="section">
+                    <h2>Background</h2>
+                    <p>
+                        This project implements a Python-based control pipeline for the KUKA youBot, combining trajectory planning with 
+                        feedforward and feedback control. The system generates reference trajectories, simulates motion, and executes 
+                        closed-loop control to enable the robot to grasp, transport, and place a block within CoppeliaSim. It demonstrates 
+                        the practical integration of control theory and robotics simulation for mobile manipulation.
+                    </p>
+                </div>
+                
+                <!-- Demo Video -->
+                <div class="section">
+                    <h2>Demo Video</h2>
+                    <div class="video-container">
+                        <iframe 
+                            src="img/Best Trajectory.avi" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
-
-                    <!-- Challenge & Solution -->
-                    <div class="section">
-                        <h2>Challenge & Solution</h2>
-                        <p>
-                            [Describe the specific technical challenges you faced. What made this project 
-                            difficult or complex? What constraints did you need to work within?]
-                        </p>
-                        <ul>
-                            <li>[Specific challenge 1 and how you approached it]</li>
-                            <li>[Specific challenge 2 and your solution]</li>
-                            <li>[Specific challenge 3 and the outcome]</li>
-                        </ul>
-                        <p>
-                            [Explain your solution approach, methodology, and why you chose this particular path.]
-                        </p>
-                    </div>
-
-                    <!-- Technical Details -->
-                    <div class="section">
-                        <h2>Technical Implementation</h2>
-                        <p>
-                            [Dive into the technical details. What engineering principles did you apply? 
-                            What calculations, simulations, or analyses did you perform? What design decisions 
-                            did you make and why?]
-                        </p>
-                        <p>
-                            [Include specific technical details like materials chosen, design parameters, 
-                            performance specifications, manufacturing considerations, etc.]
-                        </p>
-                    </div>
-
-                    <!-- Results & Impact -->
-                    <div class="section">
-                        <h2>Results & Impact</h2>
-                        <div class="results-grid">
-                            <div class="result-item">
-                                <div class="result-number">[40%]</div>
-                                <div class="result-label">[Improvement Metric]</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">[$25K]</div>
-                                <div class="result-label">[Cost Savings]</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">[30%]</div>
-                                <div class="result-label">[Efficiency Gain]</div>
-                            </div>
-                        </div>
-                        <p>
-                            [Explain the quantifiable results and impact of your project. How did you measure 
-                            success? What improvements were achieved? How did this benefit the organization 
-                            or end users?]
-                        </p>
-                    </div>
-
-                    <!-- Images/Visuals -->
-                    <div class="section">
-                        <h2>Project Visuals</h2>
-                        <div class="image-gallery">
-                            <div class="gallery-item">
-                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=250&fit=crop" alt="Project Image 1">
-                                <div class="gallery-caption">[Caption describing this image/diagram]</div>
-                            </div>
-                            <div class="gallery-item">
-                                <img src="https://images.unsplash.com/photo-1565008576018-7ba8b42c2c47?w=400&h=250&fit=crop" alt="Project Image 2">
-                                <div class="gallery-caption">[Caption describing this image/diagram]</div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    <p>
+                        This demonstration video showcases the complete assembly process, highlighting the precision robotics, 
+                        quality control checkpoints, and real-time system monitoring capabilities of the automated manufacturing line.
+                    </p>
                 </div>
 
-                <!-- Sidebar -->
-                <div class="sidebar">
+                <!-- System Overview -->
+                <div class="section">
+                    <h2>System Overview</h2>
+                    <p>
+                        This project implements a Python pipeline for the KUKA youBot, a mobile manipulator with mecanum wheels and a 5-DOF arm, 
+                        to plan and execute block manipulation tasks in simulation. Using the Modern Robotics library, the system generates 
+                        reference trajectories, propagates robot states, and applies feedforward + feedback control to guide the end-effector 
+                        through grasping, transport, and placement. The output is a CSV file of robot states, which can be replayed in CoppeliaSim 
+                        to visualize performance.
+                    </p>
                 </div>
-            </div>
-        </div>
-    </section>
 
+               
+
+                <!-- Mechanical Design -->
+                <div class="section">
+                    <h2>Trajectory Planning </h2>
+                    <p>
+                        A trajectory generator computes end-effector paths between set initial and target cube positions. 
+                        Trajectories are parametrized in SE(3) space and flattened into a CSV format including gripper states (open, closed), facilitating
+                        simulation within Copelia Sim. The flow for the trajectory generator is as follows: 
+                        <ol>
+                            <li>Generate a reference trajectory for the robot end-effector to pick and place an object</li>
+                            <li>Use Feedforward and Feedback control to computer commanded end-effector twists</li>
+                            <li>Converts twists into wheel and arm velocities</li>
+                            <li>Simulates the robots next configuration over time using a supplemental NextState() script</li>
+                            <li>Saved the complete trajectory (robot configuration + gripper state) to a CSV</li>
+                            <li>Plots the end-effector twist error over time to validate the feedback control</li>
+                        </ol>
+                    </p>
+                <div class="section">
+                    <h2>Trajectory Planning </h2>
+                    <p>
+                        The manipulation task is decomposed into eight modular steps: approach, grasp, lift, transport, place, and retreat. A trajectory generator produces smooth reference motions for each step, encoding chassis pose, arm joint angles, wheel angles, and gripper state.
+                        Robot states are propagated with a custom NextState() function, which respects velocity limits while simulating motion over time. 
+                        Control is handled by FeedbackControl(), which combines reference twists (feedforward) with proportional-integral corrections (feedback) 
+                        to reduce configuration error and ensure accurate execution
+
+                        Trajectories are parametrized in SE(3) space and flattened into a CSV format including gripper states (open, closed), facilitating
+                        simulation within Copelia Sim. The flow for the trajectory generator is as follows: 
+                        <ol>
+                            <li>Generate a reference trajectory for the robot end-effector to pick and place an object</li>
+                            <li>Use Feedforward and Feedback control to computer commanded end-effector twists</li>
+                            <li>Converts twists into wheel and arm velocities</li>
+                            <li>Simulates the robots next configuration over time using a supplemental NextState() script</li>
+                            <li>Saves the complete trajectory (robot configuration + gripper state) to a CSV</li>
+                            <li>Plots the end-effector twist error over time to validate the feedback control</li>
+                        </ol>
+                    </p>
+                    <!-- Component 1 - Right Aligned Image -->
+                    <div class="design-subsection">
+                        <div class="subsection-content top-image">
+                            <div class="subsection-text">
+                                <h3>Error Chart</h3>
+                            </div>
+                            <div class="subsection-image">
+                                <img src="img/best X_err Plot.png" alt="Robotic Assembly Arms">
+                                <div class="image-caption">Error over time of the Reference and Actual Twists of the youBot end effector</div>
+                            </div>
+                        </div>
+                    </div>
+
+                  
     <!-- Project Navigation -->
     <section class="project-nav">
         <div class="container">
             <div class="project-nav-links">
-                <a href="[previous-project].html" class="project-nav-link">
+                <a href="vibration-analysis.html" class="project-nav-link">
                     <div class="nav-arrow">←</div>
                     <div class="nav-text">
                         <div class="nav-label">Previous Project</div>
-                        <div class="nav-title">[Previous Project Name]</div>
+                        <div class="nav-title">Vibration Analysis Platform</div>
                     </div>
                 </a>
                 
-                <a href="[next-project].html" class="project-nav-link next">
+                <a href="materials-testing.html" class="project-nav-link next">
                     <div class="nav-arrow">→</div>
                     <div class="nav-text">
                         <div class="nav-label">Next Project</div>
-                        <div class="nav-title">[Next Project Name]</div>
+                        <div class="nav-title">Advanced Materials Testing</div>
                     </div>
                 </a>
             </div>
@@ -708,9 +695,9 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.style.background = 'rgba(247, 250, 252, 0.98)';
+                nav.style.background = '#2d3748';
             } else {
-                nav.style.background = 'rgba(247, 250, 252, 0.95)';
+                nav.style.background = '#4a5568';
             }
         });
 
