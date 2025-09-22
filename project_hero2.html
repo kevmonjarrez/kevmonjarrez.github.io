@@ -310,7 +310,35 @@
             padding: 0 1rem;
         }
 
+        /*Technical Specification*/
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .spec-item {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #4a5568;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-value {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
         /* Results/Outcomes */
+
         .results-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -552,12 +580,17 @@
                     <div class="meta-label">Role</div>
                     <div class="meta-value">Mechanical Design</div>
                 </div>
+                <div class="meta-item">
+                    <div class="meta-label">Client</div>
+                    <div class="meta-value">Argonne National Lab</div>
+                </div>
             </div>
 
             <div class="tech-stack">
                 <span class="tech-tag">OnShape</span>
                 <span class="tech-tag">Siemens NX CAM</span>
                 <span class="tech-tag">MatLab</span>
+                <span class="tech-tag">Cable Drive Systems</span>
                 <span class="tech-tag">Rapid Prototyping</span>
             </div>
         </div>
@@ -571,31 +604,44 @@
                 <div class="section">
                     <h2>Background</h2>
                     <p>
-                        This fast-paced project, developed as part of Northwestern University's selective capstone program in collaboration 
-                        with Argonne National Laboratory, focused on designing and implementing a sophisticated haptic-robot telemanipulation system. 
-                         Argonne National Laboratory desired a system that would allow their chemists to remotely work with radioactive materials, necessitating
-                        a highly precise-yet-strong haptic/robot system.
+                        Argonne National Laboratory required a sophisticated telemanipulation system enabling chemists to safely 
+                        handle radioactive materials through remote operation. As mechanical design lead for Northwestern University's 
+                        capstone program, I spearheaded the development of integrated mechanical subsystems with stringent 
+                        precision and safety requirements.
                     </p>
                     <p>
+                        The challenge demanded creating human-like dexterity within a constraint of two actuated degrees of freedom 
+                        per subsystem, requiring careful kinematic analysis and mechanical optimization to maximize workspace coverage 
+                        while maintaining intuitive control mapping between haptic and robotic systems.
+                        <!---        
                         Our solution enables users to control a robotic finger and thumb using a haptic exoskeleton comprised of a finger and 
                         thumb. I led the mechanical design and fabrication of the system, driving the rapid development of a robust, 
-                        ergonomic, and scalable solution.
+                        ergonomic, and scalable solution. -->
                     </p>
                 </div>
 
-                <!-- System Overview -->
-                <div class="section">
-                    <h2>System Overview</h2>
-                    <p>
-                        The automated manufacturing system integrates four key subsystems: robotic assembly arms, intelligent conveyor 
-                        networks, real-time quality control stations, and a centralized control system. The system processes 150 units 
-                        per hour with 99.2% accuracy, handling complex assembly operations that previously required 12 manual stations.
-                    </p>
-                    <p>
-                        Built on a modular architecture, the system features redundant safety mechanisms, predictive maintenance 
-                        capabilities, and seamless integration with existing ERP systems. The control system utilizes machine learning 
-                        algorithms to optimize production flow and identify potential issues before they impact quality.
-                    </p>
+                <div class="design-subsection">
+                        <div class="subsection-content top-image">
+                            <div class="subsection-image">
+                                <img src="img/Manifold WorkSpace.png" alt="Workspace Analysis">
+                                <div class="image-caption">Kinematic workspace analysis showing optimal joint configurations and reachable volumes</div>
+                            </div>
+                            <div class="subsection-text">
+                                <h3>Workspace Optimization Strategy</h3>
+                                <p>
+                                    I conducted extensive kinematic analysis to determine optimal joint configurations that maximize useful workspace 
+                                    while maintaining mechanical simplicity. The finger systems utilize planar kinematics to capture the essential 
+                                    curl motion, while the thumb systems implement a more complex 3D workspace to enable both waggle (abduction/adduction) 
+                                    and curl (flexion/extension) motions.
+                                </p>
+                                <p>
+                                    The design choice to couple MCP and IP joints in the thumb with a 1:1 ratio simplified control while preserving 
+                                    natural thumb motion patterns. This approach achieved ~115° total curl range with each joint contributing ~57.5°, 
+                                    providing adequate dexterity for laboratory manipulation tasks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Demo Video -->
@@ -610,8 +656,8 @@
                         </iframe>
                     </div>
                     <p>
-                        This demonstration video showcases the complete assembly process, highlighting the precision robotics, 
-                        quality control checkpoints, and real-time system monitoring capabilities of the automated manufacturing line.
+                        Demonstration of the complete haptic-robot telemanipulation system showing precise control of test tube 
+                        manipulation through bidirectional force feedback and real-time position tracking.
                     </p>
                 </div>
 
@@ -634,7 +680,7 @@
                                     gear train, it uses a pulley-driven transmission with a 4:1 ratio at each joint, enhancing torque delivery
                                     while maintaining a compact profile. High-performance Maxon EC 45 flat motors supply the requisite torque 
                                     density without adding bulk. To ensure stability under load, stainless steel cables are tensioned using 
-                                    simple screws and nuts, and magnetic encoders provide precise positional data for fine-tuned control. 
+                                    tensioning screws and nuts, and magnetic encoders provide precise positional data for fine-tuned control. 
                                      
                                 </p>
                                 <p>
@@ -645,7 +691,7 @@
                             </div>
                             <div class="subsection-image">
                                 <img src="img/rfinger.png" alt="Robotic Assembly Arms">
-                                <div class="image-caption">Six-axis robotic arms with precision grippers and force feedback systems</div>
+                                <div class="image-caption">Robotic Finger CAD Model</div>
                             </div>
                         </div>
                     </div>
@@ -728,32 +774,85 @@
                     </div>
                 </div>
 
-                <!-- Results & Impact -->
-                <div class="section">
-                    <h2>Results & Impact</h2>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <div class="result-number">42%</div>
-                            <div class="result-label">Efficiency Increase</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number">$450K</div>
-                            <div class="result-label">Annual Savings</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number">78%</div>
-                            <div class="result-label">Defect Reduction</div>
+<!-- Manufacturing & Iterative Development -->                
+            <div class="section">
+                    <h2>Manufacturing Analysis & Process Optimization</h2>
+                    <p>
+                        Led the manufacturing strategy through multiple design iterations, transitioning from waterjet/3D printing to 
+                        precision CNC machining as part fabrication requirements became clear. Each iteration addressed specific 
+                        mechanical challenges through systematic analysis and design refinement.
+                    </p>
+
+                    <div class="design-subsection">
+                        <div class="subsection-content top-image">
+                            <div class="subsection-image">
+                                <img src="img/ManufactureRDScomparison.png" alt="Manufacturing Progression">
+                                <div class="image-caption">Evolution from V1A waterjet prototypes through V3D final CNC-machined components</div>
+                            </div>
+                            <div class="subsection-text">
+                                <h3>Design Iteration & Manufacturing Evolution</h3>
+                                <p>
+                                    <strong>V1A-V2A:</strong> Transitioned from waterjet cutting to CNC machining to address tolerance 
+                                    stackup issues and bearing friction problems. Initial press-fit assemblies on shoulder bolts created 
+                                    excessive friction and assembly difficulties.
+                                </p>
+                                <p>
+                                    <strong>V3A-V3D:</strong> Implemented slip-fit bearing systems with increased clearances, resolved 
+                                    bearing race support design, and scaled up finger size for improved manufacturability. Final iteration 
+                                    introduced optimized tendon wrapping system to eliminate complex tensioning procedures between joints.
+                                </p>
+                                <ul>
+                                    <li><strong>Bearing Integration:</strong> Moved to flange bearings with slip fits for easier contamination management and replacement</li>
+                                    <li><strong>Tolerance Analysis:</strong> Addressed positional tolerancing issues through stackup analysis and component redesign</li>
+                                    <li><strong>Tool Selection:</strong> Optimized machining operations for small-scale precision components with custom tooling strategy</li>
+                                    <li><strong>Assembly Optimization:</strong> Redesigned cable termination points and tensioning systems for field serviceability</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                 <!-- Technical Challenges & Solutions -->
+                <div class="section">
+                    <h2>Technical Challenges & Engineering Solutions</h2>
                     <p>
-                        The automated manufacturing system exceeded all performance targets, achieving 42% efficiency improvement 
-                        and reducing defect rates from 15% to 3.3%. The system processes 150 units per hour compared to the 
-                        previous 90 units, while requiring 60% fewer operators and reducing material waste by 35%.
+                        Throughout development, I addressed complex mechanical challenges through systematic engineering analysis 
+                        and iterative design refinement, focusing on precision, reliability, and user safety.
+                    </p>
+
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <div class="spec-label">Cable Tensioning Optimization</div>
+                            <div class="spec-value">Developed adjustable tensioning system with vented screws and copper crimping techniques for consistent cable tension</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Bearing Friction Mitigation</div>
+                            <div class="spec-value">Resolved through precision bearing seat design, contamination control, and transition to slip-fit assemblies</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Joint Coupling Analysis</div>
+                            <div class="spec-value">Identified and corrected DIP-PIP coupling issues through pulley groove sizing and reference frame optimization</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Safety System Integration</div>
+                            <div class="spec-value">Implemented mechanical hard stops using press-fit dowels to prevent hyperextension and protect cable systems</div>
+                        </div>
+                    </div>
+
+
+               <!-- Results & Impact -->
+                <div class="section">
+                    <h2>Results & Impact</h2>
+                    <p>
+                        Successfully delivered a functional haptic-robot telemanipulation system capable of precise test tube manipulation 
+                        and bidirectional force feedback. The mechanical design achieved all primary objectives: natural motion replication, 
+                        adequate workspace coverage, and reliable force transmission through optimized cable-driven systems.
                     </p>
                     <p>
-                        Beyond quantitative improvements, the system enhanced workplace safety by eliminating repetitive manual 
-                        tasks and hazardous operations. The implementation served as a model for the client's other facilities, 
-                        with plans to deploy similar systems across their global manufacturing network.
+                        The project demonstrated advanced mechanical engineering principles including kinematic optimization, transmission 
+                        design, precision manufacturing, and system integration. The modular architecture enables future enhancements and 
+                        provides a robust foundation for Argonne National Laboratory's radioactive material handling applications, with 
+                        design insights applicable to broader telemanipulation and haptic feedback systems.
                     </p>
                 </div>
             </div>
