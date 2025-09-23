@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kevin Monjarrez - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -53,7 +54,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #2d3748;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -64,14 +65,14 @@
         }
 
         .nav-links a {
-            color: #4a5568;
+            color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
             position: relative;
         }
 
         .nav-links a:hover {
-            color: #2d3748;
+            color: #cbd5e0;
         }
 
         .nav-links a::after {
@@ -81,7 +82,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: #4a5568;
+            background: #fff;
             transition: width 0.3s ease;
         }
 
@@ -187,12 +188,12 @@
             text-align: center;
             font-size: 3rem;
             color: #2d3748;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         /* About Section */
         .about {
-            background: #f7fafc;
+            background: #edf2f7;
         }
 
         .about-content {
@@ -247,7 +248,7 @@
 
         /* Projects Section */
         .projects {
-            background: #edf2f7;
+            background: #f7fafc;
         }
 
         /* Hero Project */
@@ -481,19 +482,24 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 15px 25px;
-            background: #fff;
-            border: 1px solid #cbd5e0;
+            padding: 18px 32px;
+            background: #4a5568;
+            border: 2px solid #4a5568;
             border-radius: 8px;
-            color: #4a5568;
+            color: #fff;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(74, 85, 104, 0.2);
         }
 
         .contact-link:hover {
-            background: #e2e8f0;
-            color: #2d3748;
+            background: #2d3748;
+            border-color: #2d3748;
+            color: #fff;
             transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 85, 104, 0.3);
         }
 
         /* Footer */
@@ -594,58 +600,26 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="img/Me.jpg" alt="Profile">
-                </div>
-                <div class="about-text">
-                    <h3>Hello!</h3>
-                    <p>
-                        I am a Mechanical Engineer at General Dynamics Electric Boat, contributing to the design and analysis of critical 
-                        submarine systems. My work spans structural and shock analyses, procurement coordination, and 
-                        system design for submarine escape hatches, rescue systems, and watertight doors; ensuring compliance with the Navy’s 
-                        demanding performance and safety standards in extreme underwater environments.
-
-                    </p>
-                    <p>
-                        I bring a strong foundation in solid mechanics, mechatronics, and system dynamics, developed through both industry and 
-                        research. At Northwestern University, where I earned my B.S. and M.S. in Mechanical Engineering, I focused on robotics, 
-                        advanced mechatronics, and manufacturing, applying these skills in projects ranging from haptic robotic systems to mold design.
-                    </p>
-                    <!---<div class="skills">
-                        <span class="skill">SolidWorks</span>
-                        <span class="skill">AutoCAD</span>
-                        <span class="skill">ANSYS</span>
-                        <span class="skill">MATLAB</span>
-                        <span class="skill">3D Printing</span>
-                        <span class="skill">CNC Machining</span>
-                        <span class="skill">FEA Analysis</span>
-                        <span class="skill">Project Management</span>
-                    </div>--->
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Projects</h2>
             
             <!-- Hero Project -->
-        <a href="project_hero2.html" class="hero-project-link">
+       
             <div class="hero-project">
                 <div class="hero-project-content">
+                    <a href="project_hero2.html" class="hero-project-link">
                     <div class="hero-project-image">
                         <img src="img/together_RDS.png" alt="Profile">
                     </div>
+                    </a>
                     <div class="hero-project-text">
                         <p class="project-type">Featured Project</p>
-                        <h3>Haptic/Robotic Telecommunication System</h3>
+                         <a href="project_hero2.html" class="hero-project-link">
+                            <h3>Haptic/Robotic Telecommunication System</h3>
+                        </a>
                         <p>
                             Designed and fabricated a haptic-robot telemanipulation system enabling 
                             users to control and receive feedback from a Finger and Thumb End-effector 
@@ -664,7 +638,7 @@
                     </div>
                 </div>
             </div>
-        </a>
+    
 
         <a href="project_jack.html" class="project-card">
             <div class="project-grid">
@@ -718,26 +692,42 @@
                     </div>
                 </div>
         </a>
+            </div>
+        </div>
+    </section>
 
-<!---
-            <a href="project_315.html" class="project-card">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="img/315-titlecard.png" alt="Profile">
-                    </div>
-                    <div class="project-content">
-                        <h3>Gear Train Design</h3>
-                        <p>Created a comprehensive vibration monitoring system for industrial equipment, enabling predictive maintenance and reducing downtime by 35%.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">MATLAB</span>
-                            <span class="tech-tag">Signal Processing</span>
-                            <span class="tech-tag">Data Acquisition</span>
-                            <span class="tech-tag">Machine Learning</span>
-                        </div>
-                    </div>
+      <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="img/Me.jpg" alt="Profile">
                 </div>
-            </a>
---->
+                <div class="about-text">
+                    <p>
+                        I am a Mechanical Engineer at General Dynamics Electric Boat, contributing to the design and analysis of critical 
+                        submarine systems. My work spans structural and shock analyses, procurement coordination, and 
+                        system design for submarine escape hatches, rescue systems, and watertight doors; ensuring compliance with the Navy’s 
+                        demanding performance and safety standards in extreme underwater environments.
+
+                    </p>
+                    <p>
+                        I bring a strong foundation in solid mechanics, mechatronics, and system dynamics, developed through both industry and 
+                        research. At Northwestern University, where I earned my B.S. and M.S. in Mechanical Engineering, I focused on robotics, 
+                        advanced mechatronics, and manufacturing, applying these skills in projects ranging from haptic robotic systems to mold design.
+                    </p>
+                    <!---<div class="skills">
+                        <span class="skill">SolidWorks</span>
+                        <span class="skill">AutoCAD</span>
+                        <span class="skill">ANSYS</span>
+                        <span class="skill">MATLAB</span>
+                        <span class="skill">3D Printing</span>
+                        <span class="skill">CNC Machining</span>
+                        <span class="skill">FEA Analysis</span>
+                        <span class="skill">Project Management</span>
+                    </div>--->
+                </div>
             </div>
         </div>
     </section>
@@ -752,10 +742,10 @@
                 </p>
                 <div class="contact-links">
                     <a href="mailto:kevmonjarrez@gmail.com" class="contact-link">
-                        📧 Email
+                        <i class="fas fa-envelope"></i> Email
                     </a>
-                    <a href="https://www.linkedin.com/in/kevin-monjarrez-b53576187/" class="contact-link">
-                        💼 LinkedIn
+                    <a href="https://www.linkedin.com/in/kevin-monjarrez-b53576187/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
                 </div>
             </div>
@@ -784,9 +774,9 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.style.background = 'rgba(247, 250, 252, 0.98)';
+                nav.style.background = '#2d3748';  /* ← Darker blue when scrolled */
             } else {
-                nav.style.background = 'rgba(247, 250, 252, 0.95)';
+                nav.style.background = '#4a5568';  /* ← Original blue */
             }
         });
 
