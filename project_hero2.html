@@ -650,30 +650,6 @@
                     </p>
                 </div>
 
-                <div class="design-subsection">
-                        <div class="subsection-content top-image">
-                            <div class="subsection-image">
-                                <img src="img/Manifold WorkSpace.png" alt="Workspace Analysis">
-                                <div class="image-caption">Kinematic workspace analysis showing optimal joint configurations and reachable volumes</div>
-                            </div>
-                            <div class="subsection-text">
-                                <h3>Workspace Optimization Strategy</h3>
-                                <p>
-                                    I conducted extensive kinematic analysis to determine optimal joint configurations that maximize useful workspace 
-                                    while maintaining mechanical simplicity. The finger systems utilize planar kinematics to capture the essential 
-                                    curl motion, while the thumb systems implement a more complex 3D workspace to enable both waggle (abduction/adduction) 
-                                    and curl (flexion/extension) motions.
-                                </p>
-                                <p>
-                                    The design choice to couple MCP and IP joints in the thumb with a 1:1 ratio simplified control while preserving 
-                                    natural thumb motion patterns. This approach achieved ~115° total curl range with each joint contributing ~57.5°, 
-                                    providing adequate dexterity for laboratory manipulation tasks.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Mechanical Design -->
                 <div class="section">
                     <h2>Mechanical Design</h2>
@@ -782,6 +758,41 @@
                             <div class="subsection-image">
                                 <img src="img/thumb.png" alt="Control System">
                                 <div class="image-caption">Centralized control system with real-time monitoring and predictive analytics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workspace Validation & Mapping Analysis -->
+                <div class="section">
+                    <h2>Workspace Validation & Mapping Analysis</h2>
+                    <p>
+                        Following mechanical design completion, I conducted comprehensive workspace analysis to validate alignment 
+                        between robotic and haptic subsystems for effective control mapping. This post-design validation ensured 
+                        that the reachable volumes of corresponding robotic and haptic components provided sufficient overlap 
+                        for intuitive telemanipulation control.
+                    </p>
+
+                    <div class="design-subsection">
+                        <div class="subsection-content top-image">
+                            <div class="subsection-image">
+                                <img src="img/Manifold WorkSpace.png" alt="Workspace Mapping Analysis">
+                                <div class="image-caption">Post-design workspace mapping analysis comparing robotic and haptic reachable volumes</div>
+                            </div>
+                            <div class="subsection-text">
+                                <h3>Haptic-Robot Workspace Mapping Validation</h3>
+                                <p>
+                                    Post-design analysis validated that the robotic and haptic finger workspaces maintain consistent 
+                                    planar kinematics, enabling direct position mapping between user input and robot output. The 
+                                    analysis confirmed that both systems capture the essential curl motion characteristics required 
+                                    for effective telemanipulation control.
+                                </p>
+                                <p>
+                                    For the thumb systems, workspace mapping analysis verified that the 3D robotic thumb workspace 
+                                    properly corresponds to the haptic thumb interface, with the 1:1 MCP-IP joint coupling providing 
+                                    natural motion mapping. The validation confirmed ~115° total curl range alignment between systems, 
+                                    ensuring intuitive control for laboratory manipulation tasks.
+                                </p>
                             </div>
                         </div>
                     </div>
