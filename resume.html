@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Kevin Monjarrez</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #4a5568;
+            background: #f7fafc;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #4a5568;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #cbd5e0;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 8px 16px;
+            background: #2d3748;
+            color: #fff !important;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #1a202c;
+            color: #fff !important;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 120px 0 80px;
+            background: #fff;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: #edf2f7;
+            border-radius: 12px;
+        }
+
+        .resume-header h1 {
+            font-size: 3rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            color: #4a5568;
+            font-size: 1.1rem;
+        }
+
+        /* Resume Sections */
+        .resume-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #4a5568;
+            padding-bottom: 0.5rem;
+        }
+
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 8px;
+            border-left: 4px solid #4a5568;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .item-company {
+            font-size: 1.1rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .item-date {
+            color: #718096;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .item-location {
+            color: #718096;
+            font-style: italic;
+        }
+
+        .item-description {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .item-description li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .item-description li::before {
+            content: "•";
+            color: #4a5568;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #4a5568;
+        }
+
+        .skill-category h4 {
+            color: #2d3748;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-category p {
+            color: #4a5568;
+        }
+
+        /* Personal Section */
+        .personal-section {
+            background: #edf2f7;
+            padding: 4rem 0;
+        }
+
+        .personal-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .fun-facts h3 {
+            color: #2d3748;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .fact-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(74, 85, 104, 0.1);
+        }
+
+        .fact-item h4 {
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-item p {
+            color: #718096;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(74, 85, 104, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            background: #fff;
+            font-size: 0.9rem;
+            color: #4a5568;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #4a5568;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links a:not(.back-link) {
+                display: none;
+            }
+
+            .resume-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .personal-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f7fafc;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4a5568;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2d3748;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">Kevin Monjarrez</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html" class="back-link">← Back to Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="container">
+
+            <!-- Education -->
+            <div class="resume-section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Masters in Mechanical Engineering</div>
+                            <div class="item-company">Northwestern University</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="item-date">Evanston, IL</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Bachelor of Science Mechanical Engineering</div>
+                            <div class="item-company">Northwestern University</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="item-date">Evanston, IL</div>
+                            <div class="item-location">GPA: 3.65/4.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="resume-section">
+                <h2 class="section-title">Experience</h2>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Mechanical Engineer</div>
+                            <div class="item-company">General Dynamics Electric Boat</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="item-date">August 2024 – Present</div>
+                            <div class="item-location">New London, CT</div>
+                        </div>
+                    </div>
+                    <ul class="item-description">
+                        <li>Contributed to the design and development of submarine escape hatches, escape and rescue systems, and watertight doors for the Columbia Class, ensuring adherence with performance standards in extreme underwater environments.</li>
+                        <li>Originated engineering calculations to support the shock qualification of submarine escape hatches, ensuring structural integrity and compliance with Navy requirements.</li>
+                        <li>Coordinated with vendors and suppliers to manage the procurement process while developing solutions to resolve non-conformances in as-built equipment.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Engineering Intern</div>
+                            <div class="item-company">Nordent Manufacturing</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="item-date">June 2023 – Sep 2023</div>
+                            <div class="item-location">Elk Grove, IL</div>
+                        </div>
+                    </div>
+                    <ul class="item-description">
+                        <li>Executed the 3D modeling and drafting of dental instruments, using various CAD software packages to facilitate the manufacturing process within Nordent's in-house production team.</li>
+                        <li>Designed, modeled, and drafted new dental cassettes, amalgam holders, and handles.</li>
+                        <li>Engaged in design reviews with clients to ensure manufacturability.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Research Assistant</div>
+                            <div class="item-company">Shirley Ryan Ability Lab</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="item-date">Sept 2022 – June 2024</div>
+                            <div class="item-location">Evanston, IL</div>
+                        </div>
+                    </div>
+                    <ul class="item-description">
+                        <li>Developed an open-source tool for automatically quantifying user skills in operating various robotic interface devices for powered wheelchairs.</li>
+                        <li>Facilitated a human factors assessment, gathering insights through interviews with physical therapists and doctors to evaluate the utility and effectiveness of the above tool.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Field Service Engineer Intern</div>
+                            <div class="item-company">Med-Lab Imaging</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div class="item-date">Jun 2022 – Sept 2022</div>
+                            <div class="item-location">Miami, FL</div>
+                        </div>
+                    </div>
+                    <ul class="item-description">
+                        <li>Serviced Siemens diagnostic imaging equipment at various sites across South Florida under the guidance of senior engineers.</li>
+                        <li>Assisted field engineers with contract clients' planned preventative and corrective maintenance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="resume-section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <p>Python, MatLab, C++, C, SQL, Java</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Software</h4>
+                        <p>Rhino, Ansys, SOLIDWORKS, Siemens NX, NX CAM, ROS, AutoCad, Excel</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Manufacturing</h4>
+                        <p>Trained in using CNC mill, lathe, and carpentry equipment</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Languages</h4>
+                        <p>English, Spanish</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Section -->
+    <section class="personal-section">
+        <div class="container">
+            <h2 class="section-title">Other Interests</h2>
+            <div class="personal-content">
+                <div class="fun-facts">
+
+                    <div class="fact-item">
+                        <h4>Pinball Wizard</h4>
+                        <p>I play by intuition, and the digits counter falls.</p>
+                    </div>
+
+                    <div class="fact-item">
+                        <h4>Bowling Enthusiast</h4>
+                        <p>I've been bowling since before I could talk (Approx. 5th Grade).</p>
+                    </div>
+
+                    <div class="fact-item">
+                        <h4>Board Game Guru</h4>
+                        <p>If your plans involve a 50 page rulebook, I'm in</p>
+                    </div>
+
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="[Add your pinball photo here]" alt="Pinball">
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="[Add your bowling photo here]" alt="Bowling">
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="[Add your travel photo here]" alt="Board Game">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kevin Monjarrez. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script>
+    // Add scroll effect to navigation
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 100) {
+            nav.style.background = '#2d3748';
+        } else {
+            nav.style.background = '#4a5568';
+        }
+    });
+
+    // Add intersection observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all resume sections for scroll animations
+    document.querySelectorAll('.resume-section, .personal-section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(50px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(section);
+    });
+
+    // Main content is always visible
+    document.querySelector('.main-content').style.opacity = '1';
+    document.querySelector('.main-content').style.transform = 'translateY(0)';
+</script>
+
+</body>
+</html>
